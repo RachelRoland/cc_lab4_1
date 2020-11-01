@@ -2,9 +2,8 @@ def is_even():
    # Notice, this will give us an error if we don't enter an integer
    # in Everyday Coding, we'll learn how to catch errors like this.
    number = int(input("Please give me an integer. "))
-   out = None
-   remainder = number % 2
-   if (remainder == 0):
+   out = Noneremainder = number % 2
+   if number % 2 == 0:
       print("True")
    else: 
       print("False")
@@ -21,10 +20,13 @@ def multi_condition():
    user_data = int(input("Please give me an integer. "))
    if user_data == 0:
       print("Don't be such a zero")
-   elif user_data%2 == 0:
-      print("Even Steven!")
+
    elif user_data < 0:
       print("Negative Nelly!)"
+
+   elif user_data % 2 == 0:
+      print("Even Steven!")
+
    elif: 
       print("Positively odd!")
 
@@ -43,15 +45,17 @@ def is_underage():
    
    # Prompt the user for their age and store it to a variable. Don't
    # forget to convert the input to an integer.
-   Age = int(input("How old are you?"))
-   if age < 16: 
-      print("Enjoy your bike, kid!")
-   if age >= 16 and <18: 
-      print("You may drive!")
-   if age >= 18 and <21: 
-      print("You may smoke and drive!")
-   if age >= 21: 
+   user_data = int(input("How old are you?"))
+
+   if user_data >= 21: 
       print("You may drink, smoke, and drive if you wish!")
+   elif user_data >= 18: 
+      print("You may smoke and drive!")
+   elif user_data >= 16: 
+      print("You may drive!")
+   else:
+      print("Enjoy your bike, kid!") 
+      
       
    
    # Set up a conditional with four cases
@@ -96,24 +100,23 @@ def guessing_game(num):
    # if the user enters that the program should exit, saying 
    # "Goodbye, quitter!"
    # No, it's not a very nice program. 
-   import random 
-   numofguesses = 0
-
-   number = random.randint(0,10)
-   print("Guess a number from 0 to 10")
-   while numofguesses < 10 
-      guess = input ()
-      guess = int(guess)
-
-      numofguesses = numofguesses + 1
-      if guess < number:
-         print ("Too Low!")
-      if guess > number:
-         print ("Too High!")
-      if guess == number 
-         print ("You win!")
-      if numofguesses > 10
-         print ("You Lose!")
+   
+   counter = 0
+   end_game = False 
+   while counter < 10 and not end_game
+      user_input = input("Guess a number, please! Q to Quit")
+      if user_input == "q": 
+            end_game = True 
+            print("Goodbye, quitter!")
+      else: 
+         if user_input == num: 
+            end_game = True 
+            print("You win!")
+         elif user_input < num: 
+            print("Too Low!")
+         else: 
+            print("Too High!")
+         counter += 1 
       
    # So the tests fail and they don't throw errors
    return None
